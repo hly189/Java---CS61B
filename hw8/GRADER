@@ -1,0 +1,23 @@
+GRADER file for Homework 8
+
+ Your Name:  Hoa Ly
+Your Login:  cs61b-da
+
+Part III.  Running time comparisons
+
+  List size         mergesort             quicksort
+      100 				1ms					1ms
+    1,000				7ms					7ms
+   10,000				35ms				24ms
+  100,000				240ms				180ms
+1,000,000				6915ms				2591ms
+
+Part IV.
+
+  Is mergesort stable?  
+  Why or why not?
+  it is not stable bc if we have an odd numer of inputs, then as the very last step it could put an end item with equal value to a beginning item in front.
+
+  Is quicksort stable?  
+  Why or why not? 
+  it is stable because it never rearranges numbers with the same value either into lesser, equal or greater queue 
