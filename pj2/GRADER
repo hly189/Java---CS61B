@@ -1,0 +1,129 @@
+                                     GRADER
+
+Name of student running submit: Harold
+Login of student running submit:cs61b-po
+
+Second team member's name: Hoa Ly
+Second team member's login:cs61b-da
+
+Third team member's name (if any): Peter Conner
+Third team member's login: cs61b-gt
+
+IMPORTANT:  Once you've submitted Project 2 once, the same team member should
+submit always.  If a different teammate must submit, inform cs61b@cory.eecs of
+all the details.  Include a complete list of team members, and let us know
+which submission you want graded.
+
+If you've submitted your project once, or even written a substantial amount of
+code together, you may not change partners without the permission of the
+instructor.
+===============================================================================
+Does your program compile without errors?
+
+Our program does compile without errors.
+
+Have you tested your program on the 61B lab machines?
+
+We have tested our program on the 61B lab machines and they compile and run well.
+
+Did you successfully implement game tree search?  Did you successfully
+implement alpha-beta pruning?  Are there any limitations on it?  What is the
+default number of search levels set by the one-parameter MachinePlayer
+constructor (or is it a variable-depth search)?
+
+We believe that we have successfully implemented a game tree search using alpha-beta pruning to speed up the process.  Some limitations occur when we increase our search depth to a level greater than 3, because the search slows down considerably and turns take longer than 5 seconds to compute on lab computers.  The default number of search levels set by the one-parameter MachinePlayer constructor is 3.
+
+
+Describe your board evaluation function in some detail.
+
+Our board evaluation function uses a defense-minded strategy which prioritizes stopping opponent's connections instead of creating your own until it has an opportunity to win. Specifically, our aplha-beta function calls the first evaulate method which looks at the entire board from one player's point of view and adds value to an integer depending on how many "chips" there are of that color on the game board, and where they are placed.  Then this first evaulation function runs two testCompletion functions, one from the player point of view, and one from the opponents point of view. Ultimately, the previous constant is added to the value of testCompletion from the opponent's point of view to increase its weight of importance when the machine player is deciding what to do.
+The first testcompletion function, which takes only a player's color as a parameter, checks to see whether a goal chip creates a connection or is part of a network by calling the second testCompletion method. 
+
+Does your MachinePlayer use any special method of choosing the first few moves?
+
+Our MachinePlayer does not use any special methods of choosing the first few moves.
+
+
+Is there anything else the graders should know to help them read your project?
+
+The readers should be aware that are some lines of commented code within methods that should just be ignored and are not used, but were left there so that we could still have access to previous versions of code if we wanted to test changes.
+The readers should also be aware the we left in two currently unused classes within the list package: SList and SListNode because we wanted to maintain the option of using SLists, but did not do so in the project we are turning in.  You may ignore those two classes as well.
+
+
+
+
+Describe the classes, modules, and interfaces you designed before and while you
+implemented the project.  Your description should include:
+  -  A list of the classes your program uses.
+  -  A list of each of the "modules" used in or by MachinePlayer, similar to
+     the list in the "Teamwork" section of the README (but hopefully more
+     detailed).  (If you're using a list class, that should probably count as
+     a separate module.)
+  -  For each module, list the class(es) the module is implemented in.
+  -  For each module, say which of your team members implemented it.
+  -  For each module, describe its interface--specifically, the prototype and
+     behavior of each method that is available for external callers (outside
+     the module) to call.  Don't include methods that are only meant to be
+     called from within the module.
+
+     For each method, provide (1) a method prototype and (2) a complete,
+     unambiguous description of the behavior of the method/module.  This
+     description should also appear before the method in your code's comments.
+
+You will probably need to change some of your design decisions as you go; be
+sure to modify this file to reflect these changes before you submit your
+project.  Your design of classes and interfaces will be worth 10% of your
+grade.
+
+List of classes our program uses:
+Classes 1-4 are all found in the player package.
+1. MachinePlayer (based off of abstract class Player)
+2. Board (holds internal game board and various methods for determing valid moves and evaluation of the board itself
+3. Best (is used only during our Alpha-Beta search and holds a move and a score)
+4. Move (Unmodified Move class provided which specificies the type and coordinates of a move)
+Classes 5-9 are all found in the list package
+5. List (Abstract List class which allows us to make SLists and DLists
+6. ListNode (Abstract class which provides method prototypes for SListNodes and DListNodes
+7. DList (Allows us to create DLists and do certain modifications of a DList)
+8. DListNode (allos us to create DListNodes and do certain modification to the node iteslf as well as the DList it is contained in.
+9. InvalidNodeException (Gives an error if a node is invalid, otherwise unused).
+
+List of Modules used by MachinePlayer:
+1. Determining whether a move is valid: This module creates methods which check for the four main rules of the game when determining whether any one chip can be placed in a spot: no corners, no chips in a spot that already contains a chip, no chips in your opponents goal areas, and no clustering.
+	Classes that implement this module: Board
+	Partner who Implemented this module: Hoa Ly
+	Interface used by outside modules and its behavior: 
+		1. public boolean validMove(Move m, int color): returns true if the input move is valid for that player determined by the input of a color interger.
+2. Creating a list of Valid Moves: Using the valid moves modules, this module checks the game board for all possible moves for any one player and will create a list of all those possible moves.
+	Classes that implement this module: Board
+	Partner who Implemented this module: Hoa Ly
+	Interface used by outside modules and its behavior:
+		1. public DList validMoves(int color): returns a list of valid moves depending for a player determined by the input color.
+3. Finding Chips that form a connection and creating a network: Starting with some beginning/front chip, search for chips that form a connection with this chip and make sure to exclude potential connection chips that would not be useful for forming a network.  This module works recursively to as it moves from chip to chip and only stops once it can't find a new chip to extend the connection or it happens to create a network, which it verifies by actively making sure to not allow more than 2 chips in a line, and looking for connections that start in the front goal area and end in the back goal area.
+	Classes that implement this module: Board
+	Partner who Implemented this module: Harold Sandoval
+	Interface used by outside modules and its behavior: public int testCompletion(int color): returns an integer based on how long the connection is or if it creates a network from the point of view of one player.
+4. Evaluation of Board: Our evaluation module uses a series of three evaluation functions to provide a score of the game board in such a way that significantly favors promoting a defense-minded strategy that favors blocking opponent's connections instead of building your own unless you have a possbility of winning.
+	Classes that implement this module: Board 
+	Partner who Implemented this module: Peter Conner and Hoa Ly
+	Interface used by outside modules and its behavior: public int evalute(int color): returns an interger based on how close one player is to winning versus the opponent.  It places a stress on stopping the opponent's connection.
+5. Alpha-beta Pruning/minimax:  This module builds off our evaluation function by running through the minimax algorithm with a-B pruning for efficiency.  It can search up to a certain search depth or until someone has one the game.
+	Classes that implement this module: MachinePlayer, Best
+	Partner who Implemented this module: Peter Conner
+	Interface used by outside modules and its behavior: public Best alphaBeta(int myDepth, int alpha, int beta, int player): returns a Best object containing the best possible move the machine player can make during any given turn.  It uses the evaluation module as heurisitic when acheiving a network is not possible.
+6. List modules: Using material we created from previous homework and lab assignments, this module is used to provide doubly-linked list functionality that is used.
+	Classes that implement this module: DList, DListNode
+	Partner who Implemented this module: Peter Conner, Hoa Ly, Harold Sandoval
+	Interface used by outside modules and its behavior: 
+		public void insertFront(Object item): inserts item as a node in the front of the list
+		public DListNode back(): Returns the last item in the list
+		public DListNode prev(): Returns the previous node in the list
+		public DListNode next(): Returns the next node in the list
+		public Object item(): Returns the item within a DListNode
+		public void insertBack(Object item): inserts item into the back of the DList
+
+MachinePlayer methods:
+
+
+
+
