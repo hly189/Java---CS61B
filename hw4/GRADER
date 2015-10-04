@@ -1,0 +1,4 @@
+Name: Hoa Ly
+login: cs61b-da
+
+It's DList node, which make the file weaker and easier to corrupt the file because it can pass as a parameter, and it can be not a part of "this" method.
