@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=tree\ item
+comment0.target=SibTreeNode(SibTree,\ java.lang.Object)
+comment0.text=\n\ Construct\ a\ valid\ SibTreeNode\ referring\ to\ a\ given\ item.\n
+comment1.params=
+comment1.target=SibTreeNode()
+comment1.text=\n\ Construct\ an\ invalid\ SibTreeNode.\n
+comment2.params=
+comment2.target=int\ children()
+comment2.text=\n\ \ children()\ returns\ the\ number\ of\ children\ of\ the\ node\ at\ this\ position.\n\ \ WARNING\:\ \ Does\ not\ run\ in\ constant\ time.\ \ Actually\ counts\ the\ kids.\n
+comment3.params=
+comment3.target=TreeNode\ parent()
+comment3.text=\n\ \ parent()\ returns\ the\ parent\ TreeNode\ of\ this\ TreeNode.\ \ Throws\ an\n\ \ exception\ if\ `this'\ is\ not\ a\ valid\ node.\ \ Returns\ an\ invalid\ TreeNode\ if\n\ \ this\ node\ is\ the\ root.\n
+comment4.params=c
+comment4.target=TreeNode\ child(int)
+comment4.text=\n\ \ child()\ returns\ the\ cth\ child\ of\ this\ TreeNode.\ \ Throws\ an\ exception\ if\n\ \ `this'\ is\ not\ a\ valid\ node.\ \ Returns\ an\ invalid\ TreeNode\ if\ there\ is\ no\n\ \ cth\ child.\n
+comment5.params=
+comment5.target=TreeNode\ nextSibling()
+comment5.text=\n\ \ nextSibling()\ returns\ the\ next\ sibling\ TreeNode\ to\ the\ right\ from\ this\n\ \ TreeNode.\ \ Throws\ an\ exception\ if\ `this'\ is\ not\ a\ valid\ node.\ \ Returns\n\ \ an\ invalid\ TreeNode\ if\ there\ is\ no\ sibling\ to\ the\ right\ of\ this\ node.\n
+comment6.params=item\ c
+comment6.target=void\ insertChild(java.lang.Object,\ int)
+comment6.text=\n\ \ insertChild()\ inserts\ an\ item\ as\ the\ cth\ child\ of\ this\ node.\ \ Existing\n\ \ children\ numbered\ c\ or\ higher\ are\ shifted\ one\ place\ to\ the\ right\n\ \ to\ accommodate.\ \ If\ the\ current\ node\ has\ fewer\ than\ c\ children,\n\ \ the\ new\ item\ is\ inserted\ as\ the\ last\ child.\ \ If\ c\ <\ 1,\ act\ as\ if\ c\ is\ 1.\n
+comment7.params=
+comment7.target=void\ removeLeaf()
+comment7.text=\n\ \ removeLeaf()\ removes\ the\ node\ at\ the\ current\ position\ from\ the\ tree\ if\n\ \ it\ is\ a\ leaf.\ \ Does\ nothing\ if\ `this'\ has\ one\ or\ more\ children.\ \ Throws\n\ \ an\ exception\ if\ `this'\ is\ not\ a\ valid\ node.\ \ If\ 'this'\ has\ siblings\ to\n\ \ its\ right,\ those\ siblings\ are\ all\ shifted\ left\ by\ one.\n
+numComments=8

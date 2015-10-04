@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=boolean\ isEmpty()
+comment0.text=\n\ \ isEmpty()\ returns\ true\ if\ this\ Tree\ is\ empty,\ false\ otherwise.\n\n\ \ @return\ true\ if\ this\ Tree\ is\ empty,\ false\ otherwise.\ \n\n\ \ Performance\:\ \ runs\ in\ O(1)\ time.\n
+comment1.params=
+comment1.target=int\ size()
+comment1.text=\ \n\ \ size()\ returns\ the\ size\ of\ this\ Tree.\n\n\ \ @return\ the\ size\ of\ this\ Tree.\n\n\ \ Performance\:\ \ runs\ in\ O(1)\ time.\n
+comment2.params=
+comment2.target=TreeNode\ root()
+comment2.text=\n\ \ root()\ returns\ the\ root\ node,\ if\ one\ exists.\ \ Returns\ an\ invalid\ node\ if\n\ \ the\ tree\ is\ empty.\n
+comment3.params=item
+comment3.target=void\ insertRoot(java.lang.Object)
+comment3.text=\n\ \ insertRoot()\ inserts\ a\ node\ containing\ "item"\ at\ the\ root\ of\ the\ tree.\n\ \ If\ a\ root\ already\ exists,\ it\ becomes\ a\ child\ of\ the\ new\ node.\n
+numComments=4

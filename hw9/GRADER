@@ -1,0 +1,9 @@
+How would your algorithm ensure that there is a path between every pair of
+cells, but no more than one path between any pair of cells (i.e., no
+cycles)?
+My algrithm verify for vertical that we are not representing a wall at position of vertical at -1, and for horizontal, we are not representing at -1, and the last column for vertical are on the edges of the maze without cells on the other side sothese choice are invalid. 
+
+How does your algorithm use random numbers to generate a different maze
+each time?  Specifically, what decision should be made by random numbers
+at each recursive invocation of the depth-first search method?
+Checks if the cells on either side of the wall are in the same disjoint set. if the sets of the ceells on either sides of the wall are on different union of the sets, then take down that wall and create a new union. Once we have a new union, we encompassing the entire maze

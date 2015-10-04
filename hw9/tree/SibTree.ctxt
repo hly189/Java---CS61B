@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=
+comment0.target=SibTree()
+comment0.text=\n\ Construct\ an\ empty\ SibTree.\n
+comment1.params=item
+comment1.target=SibTree(java.lang.Object)
+comment1.text=\n\ Construct\ a\ one-node\ SibTree.\n
+comment2.params=
+comment2.target=TreeNode\ root()
+comment2.text=\n\ \ root()\ returns\ the\ root\ node,\ if\ one\ exists.\ \ Returns\ an\ invalid\ node\ if\n\ \ the\ tree\ is\ empty.\n
+comment3.params=item
+comment3.target=void\ insertRoot(java.lang.Object)
+comment3.text=\n\ \ insertRoot()\ inserts\ a\ node\ containing\ "item"\ at\ the\ root\ of\ the\ tree.\n\ \ If\ a\ root\ already\ exists,\ it\ becomes\ a\ child\ of\ the\ new\ node.\n
+comment4.params=
+comment4.target=java.lang.String\ toString()
+comment4.text=\n\ toString()\ returns\ a\ string\ representation\ of\ the\ SibTree.\n
+comment5.params=currentNode\ depth
+comment5.target=java.lang.String\ preorderString(SibTreeNode,\ int)
+comment6.params=args
+comment6.target=void\ main(java.lang.String[])
+comment6.text=\n\ main()\ contains\ mounds\ and\ mounds\ of\ icky\ test\ code.\n
+numComments=7
